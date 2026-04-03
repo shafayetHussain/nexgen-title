@@ -46,7 +46,7 @@ export default function Navbar() {
               Nexgen Title Inc.
             </p>
             <p className="text-[10px] uppercase tracking-[0.25em] text-[#d4af37] sm:text-xs">
-              Secure Closings. Elevated Service.
+              Not Your Old-School Title Company
             </p>
           </div>
         </Link>

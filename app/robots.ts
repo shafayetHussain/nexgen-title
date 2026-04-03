@@ -1,7 +1,6 @@
-// =========================================================
-// FILE: app/robots.ts
-// =========================================================
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "http://nexgentitleinc.comsitemap.xml",
+    sitemap: "https://nexgentitleinc.com/sitemap.xml",
   };
 }

@@ -21,10 +21,10 @@ export default function Hero() {
           className="relative z-10 flex flex-col justify-center"
         >
           <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#d4af37]">
-            Warren, Michigan Title Company
+            Michigan's Title Company
           </p>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Trusted Title &amp; Escrow Services in Warren, MI
+            Trusted Title &amp; Escrow Services in Michigan
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
             Nexgen Title Inc. provides secure, accurate, and professional title services for residential and commercial transactions, with an experience designed to make every closing smooth and confident.
