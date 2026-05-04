@@ -1,6 +1,7 @@
 // =========================================================
 // FILE: app/page.tsx
 // =========================================================
+import BrandIntro from "@/components/BrandIntro";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -23,6 +24,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
+      <BrandIntro />
       <Hero />
       <Services />
       <WhyChooseUs />

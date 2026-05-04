@@ -4,7 +4,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SmoothScrollLink from "@/components/SmoothScrollLink";
 
 export default function Hero() {
   return (
@@ -23,27 +22,12 @@ export default function Hero() {
           <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#d4af37]">
             Nationwide Title &amp; Escrow Support
           </p>
-          <h1 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Trusted Title &amp; Escrow Services Across the USA
-          </h1>
+          <h2 className="max-w-3xl font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            A Smoother Closing Experience from Start to Finish
+          </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
             Nexgen Title Inc. provides secure, accurate, and professional title services for residential and commercial transactions nationwide, with an experience designed to make every closing smooth and confident.
           </p>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <SmoothScrollLink
-              hash="#contact"
-              className="rounded-md bg-[#d4af37] px-6 py-3 text-center text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#e3bf4a] hover:shadow-lg hover:shadow-[#d4af37]/20"
-            >
-              Order Title
-            </SmoothScrollLink>
-            <SmoothScrollLink
-              hash="#services"
-              className="rounded-md border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#d4af37] hover:text-[#d4af37]"
-            >
-              Explore Services
-            </SmoothScrollLink>
-          </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {["Residential & Commercial", "Secure Transactions", "Serving All 50 States"].map((item) => (
