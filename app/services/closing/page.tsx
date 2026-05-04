@@ -4,8 +4,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Closing Services | Nexgen Title Inc.",
-  description: "Closing services in Warren, MI with smooth coordination and a professional client experience.",
+  title: "Closing Services",
+  description: "Closing services across the USA with smooth coordination and a professional client experience.",
+  alternates: {
+    canonical: "/services/closing",
+  },
+  openGraph: {
+    title: "Closing Services | Nexgen Title Inc.",
+    description: "Closing services across the USA with smooth coordination and a professional client experience.",
+    url: "/services/closing",
+    images: ["/nextgen-logo.jpeg"],
+  },
 };
 
 export default function ClosingPage() {
@@ -17,11 +26,11 @@ export default function ClosingPage() {
         <p className="mt-6 leading-8 text-white/75">
           Nexgen Title Inc. helps streamline the closing process with responsive coordination, document support, and a refined client experience.
         </p>
-        <div className="mt-10 space-y-4 text-white/75">
-          <p>• Closing coordination support</p>
-          <p>• Clear preparation and communication</p>
-          <p>• Professional service through final signing</p>
-        </div>
+        <ul className="mt-10 list-disc space-y-4 pl-5 text-white/75">
+          <li>Closing coordination support</li>
+          <li>Clear preparation and communication</li>
+          <li>Professional service through final signing</li>
+        </ul>
       </div>
     </main>
   );

@@ -4,8 +4,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Escrow Services | Nexgen Title Inc.",
-  description: "Secure escrow services in Warren, MI with professional transaction support.",
+  title: "Escrow Services",
+  description: "Secure escrow services across the USA with professional transaction support.",
+  alternates: {
+    canonical: "/services/escrow",
+  },
+  openGraph: {
+    title: "Escrow Services | Nexgen Title Inc.",
+    description: "Secure escrow services across the USA with professional transaction support.",
+    url: "/services/escrow",
+    images: ["/nextgen-logo.jpeg"],
+  },
 };
 
 export default function EscrowPage() {
@@ -17,11 +26,11 @@ export default function EscrowPage() {
         <p className="mt-6 leading-8 text-white/75">
           Our escrow services are built to protect each stage of the transaction through accurate handling, professionalism, and dependable coordination.
         </p>
-        <div className="mt-10 space-y-4 text-white/75">
-          <p>• Secure document and transaction support</p>
-          <p>• Neutral handling across all parties</p>
-          <p>• Reliable communication from start to finish</p>
-        </div>
+        <ul className="mt-10 list-disc space-y-4 pl-5 text-white/75">
+          <li>Secure document and transaction support</li>
+          <li>Neutral handling across all parties</li>
+          <li>Reliable communication from start to finish</li>
+        </ul>
       </div>
     </main>
   );

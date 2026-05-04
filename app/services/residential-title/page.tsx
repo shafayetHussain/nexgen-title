@@ -4,9 +4,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Residential Title Services | Nexgen Title Inc.",
+  title: "Residential Title Services",
   description:
-    "Residential title services in Warren, MI for buyers, sellers, agents, and lenders.",
+    "Residential title services across the USA for buyers, sellers, agents, and lenders.",
+  alternates: {
+    canonical: "/services/residential-title",
+  },
+  openGraph: {
+    title: "Residential Title Services | Nexgen Title Inc.",
+    description:
+      "Residential title services across the USA for buyers, sellers, agents, and lenders.",
+    url: "/services/residential-title",
+    images: ["/nextgen-logo.jpeg"],
+  },
 };
 
 export default function ResidentialTitlePage() {
@@ -18,11 +28,11 @@ export default function ResidentialTitlePage() {
         <p className="mt-6 leading-8 text-white/75">
           We provide residential title services designed to support buyers, sellers, real estate agents, and lenders with accuracy, responsiveness, and professionalism.
         </p>
-        <div className="mt-10 space-y-4 text-white/75">
-          <p>• Title review and transaction support</p>
-          <p>• Clear communication throughout the process</p>
-          <p>• Dependable service for smoother closings</p>
-        </div>
+        <ul className="mt-10 list-disc space-y-4 pl-5 text-white/75">
+          <li>Title review and transaction support</li>
+          <li>Clear communication throughout the process</li>
+          <li>Dependable service for smoother closings</li>
+        </ul>
       </div>
     </main>
   );

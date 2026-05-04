@@ -4,9 +4,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Commercial Title Services | Nexgen Title Inc.",
+  title: "Commercial Title Services",
   description:
-    "Commercial title services in Warren, MI for business properties and complex real estate transactions.",
+    "Commercial title services across the USA for business properties and complex real estate transactions.",
+  alternates: {
+    canonical: "/services/commercial-title",
+  },
+  openGraph: {
+    title: "Commercial Title Services | Nexgen Title Inc.",
+    description:
+      "Commercial title services across the USA for business properties and complex real estate transactions.",
+    url: "/services/commercial-title",
+    images: ["/nextgen-logo.jpeg"],
+  },
 };
 
 export default function CommercialTitlePage() {
@@ -18,11 +28,11 @@ export default function CommercialTitlePage() {
         <p className="mt-6 leading-8 text-white/75">
           Nexgen Title Inc. supports commercial transactions with a professional, detail-oriented approach tailored for more complex property needs.
         </p>
-        <div className="mt-10 space-y-4 text-white/75">
-          <p>• Title support for commercial properties</p>
-          <p>• Coordinated service for complex deals</p>
-          <p>• A polished experience from review to closing</p>
-        </div>
+        <ul className="mt-10 list-disc space-y-4 pl-5 text-white/75">
+          <li>Title support for commercial properties</li>
+          <li>Coordinated service for complex deals</li>
+          <li>A polished experience from review to closing</li>
+        </ul>
       </div>
     </main>
   );

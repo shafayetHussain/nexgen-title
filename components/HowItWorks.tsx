@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 // =========================================================
 // FILE: components/HowItWorks.tsx
 // =========================================================
@@ -28,12 +32,20 @@ export default function HowItWorks() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {steps.map((item) => (
-          <div key={item.step} className="rounded-[24px] border border-white/10 bg-white/5 p-8">
+        {steps.map((item, index) => (
+          <motion.div
+            key={item.step}
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: index * 0.08 }}
+            whileHover={{ y: -5 }}
+            className="rounded-[24px] border border-white/10 bg-white/5 p-8 transition hover:border-[#d4af37]/40 hover:bg-white/[0.07]"
+          >
             <p className="text-sm font-semibold tracking-[0.25em] text-[#d4af37]">{item.step}</p>
             <h3 className="mt-4 font-serif text-2xl">{item.title}</h3>
             <p className="mt-4 leading-8 text-white/70">{item.text}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

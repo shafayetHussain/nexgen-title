@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import SmoothScrollLink from "@/components/SmoothScrollLink";
 
 export default function Navbar() {
   // Track mobile menu open state.
@@ -29,23 +30,21 @@ export default function Navbar() {
           : "border-white/5 bg-black/60 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo and brand */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border border-[#d4af37]/40 bg-black md:h-12 md:w-12">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <div className="relative h-14 w-44 shrink-0 overflow-hidden rounded-lg border border-[#d4af37]/40 bg-black shadow-[0_0_24px_rgba(212,175,55,0.16)] sm:h-16 sm:w-52">
             <Image
               src="/nextgen-logo.jpeg"
               alt="Nexgen Title Inc. logo"
               fill
-              className="object-contain p-1"
+              sizes="(min-width: 640px) 208px, 176px"
+              className="object-contain px-3 py-2"
               priority
             />
           </div>
-          <div>
-            <p className="font-serif text-lg tracking-wide text-white sm:text-xl">
-              Nexgen Title Inc.
-            </p>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-[#d4af37] sm:text-xs">
+          <div className="hidden lg:block">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#d4af37]">
               Not Your Old-School Title Company
             </p>
           </div>
@@ -53,27 +52,27 @@ export default function Navbar() {
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="#about" className="text-sm text-white/80 transition hover:text-[#d4af37]">
+          <SmoothScrollLink hash="#about" className="text-sm text-white/80 transition hover:text-[#d4af37]">
             About
-          </Link>
-          <Link href="#services" className="text-sm text-white/80 transition hover:text-[#d4af37]">
+          </SmoothScrollLink>
+          <SmoothScrollLink hash="#services" className="text-sm text-white/80 transition hover:text-[#d4af37]">
             Services
-          </Link>
-          <Link href="#faq" className="text-sm text-white/80 transition hover:text-[#d4af37]">
+          </SmoothScrollLink>
+          <SmoothScrollLink hash="#faq" className="text-sm text-white/80 transition hover:text-[#d4af37]">
             FAQ
-          </Link>
-          <Link href="#contact" className="text-sm text-white/80 transition hover:text-[#d4af37]">
+          </SmoothScrollLink>
+          <SmoothScrollLink hash="#contact" className="text-sm text-white/80 transition hover:text-[#d4af37]">
             Contact
-          </Link>
+          </SmoothScrollLink>
         </nav>
 
         {/* Desktop CTA */}
-        <Link
-          href="#contact"
+        <SmoothScrollLink
+          hash="#contact"
           className="hidden rounded-md bg-[#d4af37] px-4 py-2 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-[#e3bf4a] md:inline-block"
         >
           Order Title
-        </Link>
+        </SmoothScrollLink>
 
         {/* Mobile menu button */}
         <button
@@ -98,25 +97,25 @@ export default function Navbar() {
             className="border-t border-white/10 bg-[#111216] md:hidden"
           >
             <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6">
-              <Link href="#about" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
+              <SmoothScrollLink hash="#about" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
                 About
-              </Link>
-              <Link href="#services" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
+              </SmoothScrollLink>
+              <SmoothScrollLink hash="#services" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
                 Services
-              </Link>
-              <Link href="#faq" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
+              </SmoothScrollLink>
+              <SmoothScrollLink hash="#faq" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
                 FAQ
-              </Link>
-              <Link href="#contact" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
+              </SmoothScrollLink>
+              <SmoothScrollLink hash="#contact" onClick={() => setIsOpen(false)} className="text-white/80 hover:text-[#d4af37]">
                 Contact
-              </Link>
-              <Link
-                href="#contact"
+              </SmoothScrollLink>
+              <SmoothScrollLink
+                hash="#contact"
                 onClick={() => setIsOpen(false)}
                 className="mt-2 inline-block rounded-md bg-[#d4af37] px-4 py-3 text-center font-semibold text-black"
               >
                 Order Title
-              </Link>
+              </SmoothScrollLink>
             </nav>
           </motion.div>
         )}

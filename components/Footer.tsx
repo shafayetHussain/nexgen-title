@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <p className="font-serif text-xl text-white">Nexgen Title Inc.</p>
           <p className="mt-3 max-w-xs leading-7">
-            Trusted title, escrow, and closing services in Warren, MI with a
+            Trusted title, escrow, and closing services across the USA with a
             polished and professional client experience.
           </p>
         </div>

@@ -3,11 +3,22 @@
 // =========================================================
 import type { Metadata } from "next";
 import Link from "next/link";
+import { serviceSchemas } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Title Services | Nexgen Title Inc. Warren, MI",
+  title: "Title Services Across the USA",
   description:
-    "Explore residential title, commercial title, escrow, and closing services from Nexgen Title Inc. in Warren, MI.",
+    "Explore residential title, commercial title, escrow, and closing services from Nexgen Title Inc. across the USA.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Title Services Across the USA | Nexgen Title Inc.",
+    description:
+      "Explore residential title, commercial title, escrow, and closing services from Nexgen Title Inc. across the USA.",
+    url: "/services",
+    images: ["/nextgen-logo.jpeg"],
+  },
 };
 
 const services = [
@@ -36,11 +47,19 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#0b0b0d] px-4 py-20 text-white sm:px-6 lg:px-8">
+      {serviceSchemas.map((schema) => (
+        <script
+          key={schema.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.25em] text-[#d4af37]">Services</p>
         <h1 className="mt-4 font-serif text-4xl sm:text-5xl">Title Solutions for Every Transaction</h1>
         <p className="mt-6 max-w-3xl leading-8 text-white/75">
-          Nexgen Title Inc. provides trusted title and escrow support for residential and commercial transactions in Warren, MI.
+          Nexgen Title Inc. provides trusted title and escrow support for residential and commercial transactions across all 50 states.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">

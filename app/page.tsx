@@ -1,7 +1,6 @@
 // =========================================================
 // FILE: app/page.tsx
 // =========================================================
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -9,7 +8,6 @@ import HowItWorks from "@/components/HowItWorks";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 import { localBusinessSchema, faqSchema } from "@/lib/schema";
 
 export default function HomePage() {
@@ -25,7 +23,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <Navbar />
       <Hero />
       <Services />
       <WhyChooseUs />
@@ -33,7 +30,6 @@ export default function HomePage() {
       <ServiceArea />
       <FAQ />
       <CTASection />
-      <Footer />
     </main>
   );
 }

@@ -3,8 +3,8 @@
 // =========================================================
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import SmoothScrollLink from "@/components/SmoothScrollLink";
 
 export default function Hero() {
   return (
@@ -21,35 +21,40 @@ export default function Hero() {
           className="relative z-10 flex flex-col justify-center"
         >
           <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#d4af37]">
-            Michigan's Title Company
+            Nationwide Title &amp; Escrow Support
           </p>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Trusted Title &amp; Escrow Services in Michigan
+            Trusted Title &amp; Escrow Services Across the USA
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
-            Nexgen Title Inc. provides secure, accurate, and professional title services for residential and commercial transactions, with an experience designed to make every closing smooth and confident.
+            Nexgen Title Inc. provides secure, accurate, and professional title services for residential and commercial transactions nationwide, with an experience designed to make every closing smooth and confident.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="#contact"
-              className="rounded-md bg-[#d4af37] px-6 py-3 text-center text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-[#e3bf4a]"
+            <SmoothScrollLink
+              hash="#contact"
+              className="rounded-md bg-[#d4af37] px-6 py-3 text-center text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#e3bf4a] hover:shadow-lg hover:shadow-[#d4af37]/20"
             >
               Order Title
-            </Link>
-            <Link
-              href="#services"
-              className="rounded-md border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition hover:border-[#d4af37] hover:text-[#d4af37]"
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              hash="#services"
+              className="rounded-md border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#d4af37] hover:text-[#d4af37]"
             >
               Explore Services
-            </Link>
+            </SmoothScrollLink>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {["Residential & Commercial", "Secure Transactions", "Local Service in Warren, MI"].map((item) => (
-              <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-white/80 backdrop-blur-sm">
+            {["Residential & Commercial", "Secure Transactions", "Serving All 50 States"].map((item) => (
+              <motion.div
+                key={item}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-white/80 backdrop-blur-sm"
+              >
                 {item}
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -78,7 +83,7 @@ export default function Hero() {
 
               <div className="mt-6 space-y-5">
                 {[
-                  "Trusted service in Warren, MI",
+                  "Trusted service across all 50 states",
                   "Secure and accurate title support",
                   "Professional communication from start to finish",
                   "Modern service with an elevated client experience",
