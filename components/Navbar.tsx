@@ -30,7 +30,7 @@ export default function Navbar() {
           : "border-white/5 bg-black/60 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="flex w-full items-center justify-between gap-4 px-4 py-3 sm:px-5 lg:px-6">
         {/* Logo and brand */}
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <div className="relative h-14 w-44 shrink-0 overflow-hidden rounded-lg border border-[#d4af37]/40 bg-black shadow-[0_0_24px_rgba(212,175,55,0.16)] sm:h-16 sm:w-52">

@@ -5,11 +5,44 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
-    event.currentTarget.reset();
+    setError("");
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(Object.fromEntries(formData)),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(result?.error || "Unable to submit your request.");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Unable to submit your request."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,10 +148,17 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="rounded-md bg-[#d4af37] px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#e3bf4a] focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50"
+              disabled={isSubmitting}
+              className="rounded-md bg-[#d4af37] px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#e3bf4a] focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
             >
-              Submit Title Request
+              {isSubmitting ? "Sending..." : "Submit Title Request"}
             </button>
+
+            {error ? (
+              <p className="rounded-md border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                {error}
+              </p>
+            ) : null}
           </motion.form>
         )}
       </AnimatePresence>

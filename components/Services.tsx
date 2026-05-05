@@ -95,8 +95,8 @@ function ServiceIcon({ icon }: { icon: ServiceIcon }) {
 
 export default function Services() {
   return (
-    <section id="services" className="mx-auto max-w-7xl scroll-mt-28 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mb-12 max-w-3xl">
+    <section id="services" className="w-full scroll-mt-28 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mb-12 max-w-3xl text-left">
         <p className="text-sm uppercase tracking-[0.25em] text-[#d4af37]">Our Services</p>
         <h2 className="mt-4 font-serif text-3xl sm:text-4xl">Title Solutions for Every Transaction</h2>
         <p className="mt-4 text-white/70">

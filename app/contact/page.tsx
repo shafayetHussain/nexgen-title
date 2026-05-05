@@ -2,6 +2,7 @@
 // FILE: app/contact/page.tsx
 // =========================================================
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact | Nationwide Title Services",
@@ -39,14 +40,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h2 className="font-serif text-2xl">Why Contact Us</h2>
-            <ul className="mt-6 list-disc space-y-4 pl-5 text-white/75">
-              <li>Residential title services</li>
-              <li>Commercial title services</li>
-              <li>Escrow support</li>
-              <li>Closing coordination</li>
-            </ul>
+          <div>
+            <ContactForm />
           </div>
         </div>
       </div>
